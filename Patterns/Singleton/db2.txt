@@ -1,0 +1,10 @@
+[ 
+  { "first_name": "Barbara",  "last_name": "Cartland",    "title": "The Pirate and the Piano Teacher", "category": "thriller" },
+  { "first_name": "Carlie",   "last_name": "Haley",       "title": "Digitized Global Orchestration",   "category": "engineering" },
+  { "first_name": "Arthur",   "last_name": "Doyle",       "title": "The Case of the Spotted Dick",     "category": "mystery" },
+  { "first_name": "Reinhold", "last_name": "Gutmann",     "title": "Managed Directional Benchmark",    "category": "management" },
+  { "first_name": "Isaac",    "last_name": "Asimov",      "title": "Once in a Venusian Sun",           "category": "fiction" },
+  { "first_name": "R. L.",    "last_name": "Stein",       "title": "Why are You Scared of Me?",        "category": "childrens" },
+  { "first_name": "Alicia",   "last_name": "Cruickshank", "title": "Balanced Local Database",          "category": "engineering" },
+  { "first_name": "Chase",    "last_name": "Runte",       "title": "Ergonomic Tertiary Solution",      "category": "engineering" }
+] 

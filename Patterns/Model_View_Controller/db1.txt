@@ -1,0 +1,6 @@
+[
+	{"last_name": "Adams","age": 90,"first_name": "John"},
+	{"last_name": "Dugaro","age": 45,"first_name": "Steve"},
+	{"last_name": "Lemieux","age": 66,"first_name": "Mario"},
+	{"last_name": "Crosby","age": 87,"first_name": "Sydney"}
+]
