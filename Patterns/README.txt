@@ -1,4 +1,4 @@
-#------------------------------------------------------------------------------
+#-----------------------------------------------------------------------------
 #  T.O.C
 #------------------------------------------------------------------------------
 #
@@ -76,3 +76,54 @@ Bridge:
 Proxy:
   main_basic.py
   main_images.py
+
+
+Behavioral Design Patterns
+--------------------------
+
+Chain Of Responsibility:
+  main_basic.py
+  main_animals.py
+  main_report.py
+
+Command:
+  main_basic.py
+  main_args.py
+  main_invoker.py
+
+Iterator:
+  main_basic.py
+  main_alphabetical.py
+  main_fibonacci.py
+  main_generator.py
+  main_gof.py
+
+Mediator:
+  main_basic.py
+  main_mediate.py
+
+Memento:
+  main_basic.py
+  main_rollback.py
+
+Observer:
+  main_basic.py
+  main_event.py
+  main_threaded.py
+
+State:
+  main_basic.py
+	main_transition.py
+
+Strategy:
+  main_basic.py
+  main_sorting.py
+
+Template Method
+  main_basic.py
+  main_hook.py
+
+Visitor:
+  main_basic.py
+  main_dispatch.py
+
