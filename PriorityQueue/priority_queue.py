@@ -65,6 +65,13 @@ class SimplePriorityQueue():
         """
         self.q = [[] for i in range(11)]
 
+    def empty(self):
+        """
+        Return whether items have been added to the queue.
+        To facilitate looping through and popping off items.
+        """
+        total_len = sum([len(x) for x in self.q])
+        return total_len == 0
 
     def add(self, item):
         """
@@ -73,7 +80,7 @@ class SimplePriorityQueue():
         item (dict):
             an item to insert into the priority queue of the form
             {int priority: str command} where priority is [0,10]
-        returns:
+        Returns:
             None
         """
         if type(item) is not dict or len(item) != 1:
@@ -100,7 +107,7 @@ class SimplePriorityQueue():
         Remove and return the item with highest priority from the queue,
         where the highest priority is 0 and the lowest is 10
 
-        returns:
+        Returns:
             a work item command, optionally as a tuple with priority
         """
 
@@ -121,14 +128,19 @@ class SimplePriorityQueue():
 class SimplerPriorityQueue():
     """
     Same idea, but leveraging the fact that the incoming data stream are
-    dictionaries, we can maintain the priorities as keys. Sparsernot as
-    obvious as a list of lists in terms of conceptualizing Also without
-    so many comments for legibility and given inline validation.
+    dictionaries, we can maintain the priorities as keys. Sparser and
+    easier to check number of elements, but perhaps not as illustrative
+    as a list of lists in terms of conceptualizing. Also without so many
+    comments for api legibility.
     """
 
     def __init__(self):
 
         self.q = {}
+
+    def empty(self):
+        total_len = sum([len(x) for x in self.q.values()])
+        return total_len == 0
 
     def add(self, item):
         if type(item) is not dict or len(item) != 1:
@@ -189,7 +201,6 @@ class SimplerPriorityQueue():
 data = [x for x in dataGenerator(7)]
 if DEBUG: print(data)
 
-
 #PQ = SimplePriorityQueue()
 PQ = SimplerPriorityQueue()
 for x in dataGenerator(17):
@@ -198,7 +209,5 @@ for x in dataGenerator(17):
 
 print('\n', pformat(PQ.q), '\n')
 
-item = PQ.pop()
-while item:
-    print(item)
-    item = PQ.pop()
+while not PQ.empty():
+    print(PQ.pop())
