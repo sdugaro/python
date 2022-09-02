@@ -121,7 +121,7 @@ class SimplePriorityQueue():
 class SimplerPriorityQueue():
     """
     Same idea, but leveraging the fact that the incoming data stream are
-    dictionaries, we can maintain the priorities as keys. This is not as
+    dictionaries, we can maintain the priorities as keys. Sparsernot as
     obvious as a list of lists in terms of conceptualizing Also without
     so many comments for legibility and given inline validation.
     """
@@ -146,7 +146,7 @@ class SimplerPriorityQueue():
     def pop(self):
 
         item = None
-        for i in range(11):
+        for i in sorted(self.q.keys()):
 
             register = self.q.get(i)
             if not register:
@@ -162,6 +162,28 @@ class SimplerPriorityQueue():
 # 1. show the random items being added
 # 2. show the populated data structure
 # 3. retrieve data in priority order
+#
+# SimplerPriorityQueue Adding {7: 'command_one'}
+# SimplerPriorityQueue Adding {10: 'command_three'}
+# SimplerPriorityQueue Adding {0: 'command_three'}
+# SimplerPriorityQueue Adding {0: 'command_five'}
+# SimplerPriorityQueue Adding {7: 'command_three'}
+# SimplerPriorityQueue Adding {9: 'command_one'}
+# SimplerPriorityQueue Adding {2: 'command_three'}
+#
+# {0: ['command_five', 'command_three'],
+#  2: ['command_three'],
+#  7: ['command_three', 'command_one'],
+#  9: ['command_one'],
+#  10: ['command_three']}
+#
+# (0, 'command_three')
+# (0, 'command_five')
+# (2, 'command_three')
+# (7, 'command_one')
+# (7, 'command_three')
+# (9, 'command_one')
+# (10, 'command_three')
 # 
 
 data = [x for x in dataGenerator(7)]
@@ -170,11 +192,11 @@ if DEBUG: print(data)
 
 #PQ = SimplePriorityQueue()
 PQ = SimplerPriorityQueue()
-for x in dataGenerator(7):
-    print(f"SimplePriorityQueue Adding {x}")
+for x in dataGenerator(17):
+    print(f"{PQ.__class__.__name__} Adding {x}")
     PQ.add(x)
 
-print(pformat(PQ.q))
+print('\n', pformat(PQ.q), '\n')
 
 item = PQ.pop()
 while item:
